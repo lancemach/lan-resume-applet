@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "lan-circle": "../../components/circle/index"
+  }
+}

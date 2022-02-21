@@ -1,0 +1,532 @@
+/* pages/job/job.wxss */
+page, .container {
+    width: 100vw;
+}
+page, .container, .resume-box, .resume {
+    min-height: 100vh;
+}
+.container {
+    position: relative;
+}
+.resume-box, .resume {
+    overflow: hidden;
+}
+.resume .swiper-item {
+    min-height: 100%;
+}
+
+.resume-index {
+    background-color: #fff; /* 浏览器不支持的时候显示 */
+    background-image: linear-gradient(to top, #CFE3F4 26%, #fff)
+}
+.resume-info {
+    z-index: 9;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 360rpx;
+    background: #fff;
+}
+.resume-info::before {
+    content: '';
+    position: absolute;
+    top: -335rpx;
+    right: -20rpx;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 170rpx 686rpx 170rpx 170rpx;
+    border-color: transparent transparent #fff transparent;
+    overflow: hidden;
+}
+
+.lancema-pic {
+    z-index: 6;
+}
+.resume-name {
+    padding: 70rpx 48rpx;
+}
+.resume-name .english {
+    font-size: 58rpx;
+    font-weight: 600;
+}
+.resume-name .stage {
+    font-size: 30rpx;
+    color: #666;
+}
+.resume-name .text{
+    font-size: 28rpx;
+    text-transform: uppercase;
+    color: #808080;
+}
+.resume-name .arrows {
+    margin-left: 5rpx;
+}
+.decorate-cyclo {
+    border-radius: 50%;
+    overflow: hidden;
+}
+.samll-cyclo {
+    right: 6rpx;
+    top: 35rpx;
+    width: 60rpx;
+    height: 60rpx;
+    background: rgba(76, 193, 102, .15);
+}
+.middle-cyclo {
+    z-index: 6;
+    top: 208rpx;
+    right: -165rpx;
+    width: 330rpx;
+    height: 330rpx;
+    background: rgba(76, 193, 102, .78);
+}
+.bigger-cyclo {
+    top: 35rpx;
+    left: -296rpx;
+    height: 619rpx;
+    width: 619rpx;
+    background: rgba(76, 193, 102, .22);
+}
+.occupation {
+    position: relative;
+    top: -10rpx;
+    padding: 0 120rpx 12rpx;
+}
+.occupation .name {
+    font-size: 60rpx;
+    font-weight: 600;
+}
+.occupation .named {
+    color: #3FB659;
+    margin-right: 8rpx;
+}
+.occupation .english {
+    font-size: 20rpx;
+    text-transform: uppercase;
+    color: #808080;
+}
+.occupation .english .text {
+    margin-right: 14rpx;
+}
+.occupation .city {
+    position: relative;
+    margin-left: 60rpx;
+}
+.occupation .city::before {
+    content: '·';
+    position: absolute;
+    left: -45rpx;
+    font-size: 50rpx;
+    color: #b2b2b2;
+}
+.occupation .city .text {
+    font-size: 46rpx;
+    font-weight: 300;
+}
+.motto {
+    padding: 0 120rpx;
+}
+.motto .text {
+    font-size: 22rpx;
+    color: #808080;
+}
+.industry {
+    left: 0;
+    right: 0;
+    bottom: 30rpx;
+    font-size: 22rpx;
+    text-align: center;
+    color: #808080;
+}
+.resume-box {
+    position: relative;
+}
+.resume-box .swiper-pager {
+    z-index: 9;
+    position: absolute;
+    top: 35rpx;
+    right: 48rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .2);
+}
+.swiper-pager .text {
+    font-size: 30rpx;
+    margin: 3rpx;
+}
+.swiper-pager .text.current {
+    margin-right: 8rpx;
+    color: #3FB659;
+}
+.resume-box .header-box {
+    height: 70rpx;
+    padding-bottom: 20rpx;
+}
+.resume-box .header-box, .resume-box .header-box .title {
+    position: relative;
+}
+.resume-box .header-box .title {
+    font-size: 40rpx;
+    line-height: 50rpx;
+}
+.header-box .title::before, .header-box .title::after, .resume-box .header-box::after, .resume-box .header-box::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+}
+.header-box .title::before {
+    top: 15rpx;
+    left: -10rpx;
+    background:rgba(63, 182, 89, .1);
+    width: 56rpx;
+    height: 56rpx;
+}
+.header-box .title::after {
+    top: -15rpx;
+    left: 140rpx;
+    width: 26rpx;
+    height: 26rpx;
+    background:rgba(63, 182, 89, .3);
+}
+.resume-box .header-box::after {
+    position: fixed;
+    right: -40rpx;
+    top: 38rpx;
+    background:rgba(63, 182, 89, .16);
+    width: 106rpx;
+    height: 106rpx;
+}
+
+.resume-box .header-box::before {
+    position: fixed;
+    left: 12%;
+    top: 40%;
+    background:rgba(63, 182, 89, .05);
+    width: 228rpx;
+    height: 228rpx;
+}
+.resume-box .header-box.unbox-before::before {
+    display: none;
+}
+
+
+.header-box .english {
+    margin-left: 22rpx;
+    font-size: 20rpx;
+    color: #b2b2b2;
+    text-transform: uppercase;
+}
+.body-box {
+    margin-top: 24rpx;
+}
+.body-box .classify {
+    margin: 60rpx 0 30rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: rgba(0, 0, 0, .6);
+}
+.border-area-box {
+    padding: 20rpx 10rpx;
+    border: 2px dashed #e2e2e2;
+    border-radius: 15rpx;
+    background: rgba(255, 255, 255, .25);
+}
+.file-box .item {
+    box-sizing: border-box;
+    padding: 25rpx 0 25rpx 35rpx;
+}
+.file-box .item .icon {
+    margin-right: 25rpx;
+}
+.file-box .item .flower {
+    position: relative;
+    top: 8rpx;
+}
+.file-box .item .text {
+    font-size: 32rpx;
+    color: #666;
+}
+
+.text-area-box .text {
+    padding-right: 22rpx;
+    line-height: 180%;
+}
+.box-y-scroll {
+    height: calc(100vh - 100rpx);
+}
+.resume-skill .list .item {
+    margin: 28rpx 0;
+}
+.resume-skill .list .icon-logo {
+    opacity: .92;
+}
+.circle-box {
+    position: relative;
+}
+.circle-box .icon {
+    position: absolute;
+    top: 39rpx;
+    z-index: 0;
+    /* opacity: .1; */
+}
+.circle-box .text {
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+.gray-box .item .text {
+    color: #b2b2b2;
+}
+.resume-works .time-start {
+    margin-bottom: 88rpx;
+}
+.resume-works .timeline-title {
+    position: relative;
+    margin-left: 125rpx;
+}
+.resume-works .timeline-title::before, .resume-works .timeline-title::after, .resume-works .timeline-title.timeline-first .name::before, .resume-works .timeline-title.timeline-first .name::after {
+    content: '';
+    position: absolute;
+}
+.resume-works .timeline-title::before {
+    z-index: -1;
+    width: 0;
+    border: 1px solid #A7E2B4;
+    top: -92rpx;
+    bottom: -36rpx;
+    left: -59rpx;
+}
+.resume-works .timeline-title::after, .resume-works .timeline-title.timeline-first .name::before, .resume-works .timeline-title.timeline-first .name::after {
+    top: 39rpx;
+    left: -64rpx;
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 50%;
+    background: #5EC574;
+    overflow: hidden;
+}
+.resume-works .body-box .timeline-title.timeline-first::after {
+    background: #E35C4F;
+}
+.resume-works .timeline-title.timeline-first .name::after {
+    /* top: 35rpx;
+    left: -68rpx; */
+    top: 33rpx;
+    left: -70rpx;
+    background: none;
+    border: 6rpx solid rgba(227, 92, 79, .28);
+}
+.resume-works .timeline-title.timeline-first .name::before {
+    top: 37rpx;
+    left: -66rpx;
+    /* width: 12rpx;
+    height: 12rpx; */
+    background: none;
+    border: 2rpx solid #E35C4F;
+    animation: lmStatusProcessing 1.2s ease-in-out infinite;
+}
+.resume-works .timeline-title .text {
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 28rpx;
+    color: #808080;
+}
+.resume-works .timeline-title .name {
+    position: relative;
+    margin-bottom: 20rpx;
+    height: 35rpx;
+    line-height: 35rpx;
+    font-size: 35rpx;
+    color: #3FB659;
+}
+.resume-works .body-box .timeline-title.timeline-first .name {
+    color: #E35C4F;
+}
+.resume-works .timeline-title .time {
+    margin-right: 12rpx;
+    /* color: #808080; */
+}
+.resume-works .border-area-box {
+    margin: 35rpx 0 88rpx;
+}
+.resume-works .timeline{
+    position: relative;
+    margin-left: 36rpx;
+}
+.resume-works .timeline .timeline-en{
+    position: absolute;
+    top: 22rpx;
+    right: 0;
+    color: #3FB659;
+    font-size: 22rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    text-transform: uppercase;
+}
+.resume-works .text-area-box {
+    padding: 15rpx 20rpx;
+}
+.resume-works .text-area-box .text {
+    display: block;
+    margin-top: 24rpx;
+    padding-right: 0;
+    text-indent: 64rpx;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.resume-works .text-area-box .text:first-child {
+    margin: 0;
+}
+.resume-works .text-area-box .tips {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: #808080;
+}
+.case-list {
+    margin-bottom: 60rpx;
+    padding-bottom: 60rpx;
+}
+.case-list:last-child {
+    padding-bottom: 0;
+}
+.case-list.border-hairline-bottom::after {
+    border-bottom-color: #d8d8d8;
+    border-bottom-style: dashed;
+}
+.case-box .pic, .case-box .case-pic {
+    width: 670rpx;
+    height: 328rpx;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+.case-box .case-pic {
+    position: relative;
+}
+.case-box .tag, .case-box .tips {
+    position: absolute;
+    right: 0;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 0 24rpx;
+    font-size: 20rpx;
+}
+.case-box .tips {
+    bottom: 0;
+    border-radius: 6rpx 0 0 0;
+    color: rgba(255, 255, 255, .86);
+    background: rgba(0, 0, 0, .12);
+}
+.case-box .tag {
+    top: 0;
+    border-radius: 0 0 0 6rpx;
+    color: #fff;
+    background: rgba(63, 182, 89, .95)
+}
+.case-title {
+    margin: 35rpx 0 16rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+.case-title .title {
+    font-size: 36rpx;
+}
+.case-info .text {
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    text-indent: 64rpx;
+    color: #808080;
+    line-height: 180%;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.case-info .stack{
+    text-indent: 0;
+    margin-bottom: 30rpx;
+}
+.resume-end {
+    position: relative;
+    text-align: center;
+    color: #808080;
+}
+.resume-end .end-box {
+    position: relative;
+    top: -150rpx;
+}
+.resume-end .thanks {
+    margin-bottom: 28rpx;
+    font-family: Montserrat Hairline;
+    font-size: 66rpx;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+.resume-end .text {
+    font-size: 28rpx;
+}
+.resume-end .copy-right, .resume-end .end-pic, .copy-right {
+    position: absolute;
+    left: 0;
+}
+.resume-end .end-pic {
+    bottom: 0;
+    width: 750rpx;
+    height: 500rpx;
+}
+.copy-right {
+    z-index: 6;
+    right: 0;
+    bottom: 0;
+}
+@keyframes lmStatusProcessing {
+    0% {
+        transform: scale(.8);
+        opacity: .4
+    }
+    to {
+        transform: scale(2.2);
+        opacity: 0
+    }
+}
+
+@media (min-height: 737px) and (max-width: 897px) {
+
+    .lancema-pic {
+        bottom: 26%;
+    }
+    .resume-info {
+        height: 400rpx;
+    }
+    .resume-name {
+        padding-top: 18%;
+    }
+    .occupation {
+        top: 0;
+        padding-top: 40rpx;
+    }
+    
+}
+
+
+.hovertreemove-right-slide {
+    animation: hovertreemove 1.5s infinite ease-in-out;
+    -webkit-animation: hovertreemove 1.5s infinite ease-in-out;
+}
+
+@keyframes hovertreemove {
+    0% {
+		opacity: 0.1;
+        transform: translate3d(8rpx, 0, 0);
+	}
+	50% {
+		opacity: 1;
+        transform: translate3d(16rpx, 0, 0);
+	}
+	100% {
+		opacity: 0.1;
+        transform: translate3d(30rpx, 0, 0);
+	}
+}

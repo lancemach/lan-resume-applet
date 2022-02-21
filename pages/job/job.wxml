@@ -1,0 +1,235 @@
+<!-- pages/job/job.wxml -->
+<view class="container">
+  <view class="resume-box">
+    <view class="swiper-pager" wx:if="{{ pager.id !=='index' }}">
+      <text class="text current">{{ pager.current }}</text>/<text class="text">{{ pager.total }}</text>
+    </view>
+    <swiper class="resume-swiper resume swiper" bindchange="bindchange">
+      <swiper-item item-id="{{ resume[0].id }}">
+        <view class="swiper-item resume-index box-posr">
+          <view class="resume-name flex-box flex-box-jcb flex-box-aic">
+            <view class="name-box">
+              <view class="english">{{ resume[0].h1 || 'LANSI' }}</view>
+              <view class="stage">{{ resume[0].h2 || 'LANSI' }}</view>
+            </view>
+            <view class="name-box flex-box flex-box-jcs flex-box-aic">
+              <text class="text">about me</text>
+              <lan-iconfont class="arrows hovertreemove-right-slide" name="double-arrows-o" color="#a2a2a2" size="32" />
+            </view>
+          </view>
+          <image mode="widthFix" class="lancema-pic box-posa" style="width: {{ resume[0].photo_pos.width }}rpx;height:{{resume[0].photo_pos.height}}rpx;left: {{resume[0].photo_pos.left}}rpx;bottom: {{resume[0].photo_pos.bottom}}%;" src="{{ resume[0].photo }}" />
+          <view class="resume-info box-posa">
+            <view class="occupation">
+              <view class="flex-box flex-box-jcs flex-box-aic">
+                <view class="box">
+                  <view class="name">
+                    <text class="named">{{ resume[0].job_title }}</text>
+                    <text class="type">{{ resume[0].job_post }}</text>
+                  </view>
+                  <view class="english">
+                    <text class="text">{{ resume[0].job_english }}</text>
+                  </view>
+                </view>
+                <view class="city">
+                  <text class="text">{{ resume[0].city }}</text>
+                </view>
+              </view>
+            </view>
+            <view class="motto">
+              <text class="text">{{ resume[0].slogan }}</text>
+            </view>
+            <view class="industry box-posa">
+              <text class="text">{{ resume[0].domain }}</text>
+            </view>
+          </view>
+          <view class="decorate-cyclo samll-cyclo box-posa"></view>
+          <view class="decorate-cyclo middle-cyclo box-posa"></view>
+          <view class="decorate-cyclo bigger-cyclo box-posa"></view>
+        </view>
+      </swiper-item>
+      <swiper-item item-id="{{ resume[1].id }}">
+        <view class="swiper-item safe-box resume-basics">
+          <view class="header-box flex-box flex-box-jcs flex-box-aie">
+            <view class="title">{{ resume[1].h1 }}</view>
+            <view class="english flex-box">{{ resume[1].h1_english }}</view>
+          </view>
+          <scroll-view scroll-y="ture" class="box-y-scroll">
+            <view class="body-box file-box">
+              <view class="list border-area-box block-box flex-box flex-box-jcb">
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon user" name="user-o" color="#3FB659" size="50" />
+                  <text class="text">{{ resume[1].info.name }}</text>
+                </view>
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon cake" name="cake-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].info.birthday }}</text>
+                </view>
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon sex" name="sex-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].info.sex }}</text>
+                </view>
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon china" name="china-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].info.nation }}</text>
+                </view>
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon phone" name="phone-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].info.phone }}</text>
+                </view>
+                <view class="item block-box-col2 flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon location" name="location-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].info.city }}</text>
+                </view>
+                <view class="item block-box flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon email" name="email-o" color="#d2d2d2" size="48" />
+                  <text class="text">{{ resume[1].info.email }}</text>
+                </view>
+              </view>
+            </view>
+            <view class="body-box file-box">
+              <view class="list border-area-box block-box flex-box flex-box-jcb">
+                <view class="item block-box flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon trencher" name="trencher-cap-o" color="#3FB659" size="50" />
+                  <text class="text">{{ resume[1].education.name }}</text>
+                </view>
+                <view class="item block-box flex-box flex-box-jcs flex-box-aic">
+                  <lan-iconfont class="icon book" name="book-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].education.domain }}</text>
+                </view>
+                <view class="item block-box text-area-box flex-box flex-box-jcs flex-box-nowarp">
+                  <lan-iconfont class="icon crown" name="crown-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].education.details }}</text>
+                </view>
+              </view>
+            </view>
+            <view class="body-box file-box">
+              <view class="list border-area-box block-box flex-box flex-box-jcb">
+                <view class="item block-box text-area-box flex-box flex-box-jcs flex-box-nowarp">
+                  <lan-iconfont class="icon flower" name="flower-o" color="#3FB659" size="50" />
+                  <text class="text">{{ resume[1].hobby }}</text>
+                </view>
+                <view class="item block-box text-area-box flex-box flex-box-jcs flex-box-nowarp">
+                  <lan-iconfont class="icon diamond" name="diamond-o" color="#d2d2d2" size="50" />
+                  <text class="text">{{ resume[1].summary }}</text>
+                </view>
+              </view>
+            </view>
+            <lan-copyright config="{{ config }}" />
+          </scroll-view>
+        </view>
+      </swiper-item>
+      <swiper-item item-id="{{ resume[2].id }}">
+        <view class="swiper-item safe-box resume-skill">
+          <view class="header-box unbox-before flex-box flex-box-jcs flex-box-aie">
+            <view class="title">{{resume[2].h1}}</view>
+            <view class="english flex-box">{{resume[2].h1_english}}</view>
+          </view>
+          <scroll-view scroll-y="ture" class="box-y-scroll">
+            <view class="body-box">
+              <view class="classify">主要技能</view>
+              <view class="list block-box flex-box flex-box-jcs">
+                <view class="item block-box-col3 flex-box flex-box-jcc" wx:for="{{resume[2].main}}" wx:for-item="main" wx:for-index="idx" wx:key="idx">
+                  <view class="circle-box flex-box flex-box-jcc flex-box-aic flex-box-dc">
+                    <lan-circle value="{{ main[1] }}" size="55" stroke-width="6" color="{{ gradientColor }}" layer-color="#f6f6f6" />
+                    <view class="text">{{ main[0] }}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="classify">熟练技能</view>
+              <view class="list block-box flex-box flex-box-jcs">
+                <view class="item block-box-col3 flex-box flex-box-jcc" wx:for="{{resume[2].skilled}}" wx:for-item="skilled" wx:for-index="idx" wx:key="idx">
+                  <view class="circle-box flex-box flex-box-jcc flex-box-aic flex-box-dc">
+                    <view><image mode="widthFix" style="width:110rpx;opacity: .85;" src="{{ skilled[1] }}" /></view>
+                    <view class="text">{{skilled[0]}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="classify">了解技能</view>
+              <view class="list gray-box block-box flex-box flex-box-jcs">
+                <view class="item block-box-col3 flex-box flex-box-jcc" wx:for="{{resume[2].realize}}" wx:for-item="realize" wx:for-index="idx" wx:key="idx">
+                  <view class="circle-box flex-box flex-box-jcc flex-box-aic flex-box-dc">
+                    <view><image class="icon-gray" mode="widthFix" style="width:108rpx;opacity: {{ realize[0] === 'Nodejs' ? .15 : .25 }};filter: gray;-webkit-filter: grayscale(100%);" src="{{ realize[1] }}" /></view>
+                    <view class="text">{{ realize[0] }}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <lan-copyright config="{{ config }}" />
+          </scroll-view>
+        </view>
+      </swiper-item>
+      <swiper-item item-id="{{ resume[3].id }}">
+        <view class="swiper-item safe-box resume-works">
+          <view class="header-box flex-box flex-box-jcs flex-box-aie">
+            <view class="title">{{resume[3].h1}}</view>
+            <view class="english flex-box">{{resume[3].h1_english}}</view>
+          </view>
+          <scroll-view scroll-y="ture" class="box-y-scroll">
+            <view class="body-box file-box">
+              <view class="time-start timeline">
+                <lan-iconfont class="icon times" name="times-o" color="#3FB659" size="68" />
+                <text class="timeline-en">time axis desc</text>
+              </view>
+              <view class="list" wx:for="{{resume[3].list}}" wx:for-item="record" wx:for-index="idx" wx:key="idx">
+                <view class="timeline-title {{ idx=== 0 ? 'timeline-first' : '' }} flex-box flex-box-dc">
+                  <text class="text name">{{ record.name }}</text>
+                  <view class="flex-box flex-box-jcb">
+                    <text class="text">{{ record.pos }}</text>
+                    <text class="text time">{{ record.time }}</text>
+                  </view>
+                </view>
+                <view class="list border-area-box block-box">
+                  <view class="item block-box text-area-box">
+                    <text class="text">{{record.details}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <lan-copyright config="{{ config }}" />
+          </scroll-view>
+        </view>
+      </swiper-item>
+      <swiper-item item-id="{{ resume[4].id }}">
+        <view class="swiper-item safe-box resume-case">
+          <view class="header-box flex-box flex-box-jcs flex-box-aie">
+            <view class="title">{{ resume[4].h1 }}</view>
+            <view class="english flex-box">{{ resume[4].h1_english }}</view>
+          </view>
+          <scroll-view scroll-y="ture" class="box-y-scroll">
+            <view class="body-box case">
+              <view class="case-list{{ (resume[4].case - 1) === idx ? '' : ' border-hairline-bottom' }}" wx:for="{{resume[4].list}}" wx:for-item="case" wx:for-index="idx" wx:key="idx">
+                <view class="case-box">
+                  <view class="case-pic" bindtap="bindNavigateToWApplet" data-appid="{{case.appid}}">
+                    <image class="pic" src="{{case.image}}" />
+                    <view class="tag" style="background: {{case.tag[1]}}">{{case.tag[0]}}</view>
+                    <view class="tips">{{case.tips}}</view>
+                  </view>
+                  <view class="case-title">
+                    <text class="title">{{case.title}}</text>
+                  </view>
+                  <view class="case-info">
+                    <view class="stack text">{{case.describe}}</view>
+                    <view class="text">{{case.details}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <lan-copyright config="{{ config }}" />
+          </scroll-view>
+        </view>
+      </swiper-item>
+      <swiper-item item-id="{{ resume[5].id }}">
+        <view class="swiper-item resume-end flex-box flex-box-jcc flex-box-aic">
+          <view class="end-box">
+              <view class="thanks">{{ resume[5].h1 }}</view>
+              <view class="text">{{ resume[5].h2 }}</view>
+              <view class="code"><image bindtap="bindPreviewImage" data-image="{{resume[5].code}}" class="pic" mode="aspectFill" style="width: 80rpx;height:80rpx;margin-top:60rpx;opacity:.5" src="{{resume[5].code}}" /></view>
+          </view>
+          <image class="end-pic flex-box flex-box-aie"  src="{{ resume[5].bg }}" />
+        </view>
+        <lan-copyright class="copy-right" config="{{ config }}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <lan-loading-page v-if="loadingStart" loading-title="{{ loadingText }}" loading-type="{{ loadingType }}" loading-start="{{ loadingStart }}" />
+</view>

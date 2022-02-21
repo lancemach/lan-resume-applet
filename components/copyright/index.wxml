@@ -1,0 +1,8 @@
+<!-- components/copyright/index.wxml -->
+<view class="^copyright-right">
+    <view class="^copyright-lancema">
+        <text class="^words ^text">{{ config.copyright.date }}</text>
+        <text class="^text">{{ config.productName }}</text>
+        <text class="^text">{{ config.copyright.author }}</text>
+    </view>
+</view> 
